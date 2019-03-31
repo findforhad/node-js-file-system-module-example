@@ -1,6 +1,9 @@
 const fs = require("fs");
 
-fs.unlink("acme.js", err => {
-  if (err) throw err;
+try {
+  fs.unlinkSync("acme.js");
   console.log("File system operation successfully executed");
-});
+} catch (e) {
+  console.log("Excecuted Catch block");
+  console.log(e);
+}
